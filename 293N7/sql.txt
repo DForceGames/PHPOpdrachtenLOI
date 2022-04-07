@@ -1,0 +1,239 @@
+CREATE DATABASE 293n7;
+
+CREATE TABLE 293n7.Lid
+(
+LidNummer varchar(255) NOT NULL PRIMARY KEY,
+Naam varchar(255),
+Voornaam varchar(255),
+Postcode varchar(255),
+Huisnummer int,
+FOREIGN KEY (Postcode) REFERENCES Postcode(Postcode)
+);
+
+CREATE TABLE 293n7.Telefoonnummer
+(
+Telefoonnummer varchar(255) NOT NULL PRIMARY KEY,
+LidNummer varchar(255),
+FOREIGN KEY (LidNummer) REFERENCES Lid(LidNummer)
+);
+
+CREATE TABLE 293n7.Email
+(
+Email varchar(255) NOT NULL PRIMARY KEY,
+LidNummer varchar(255),
+FOREIGN KEY (LidNummer) REFERENCES Lid(LidNummer)
+);
+
+CREATE TABLE 293n7.Postcode
+(
+Postcode varchar(255) NOT NULL PRIMARY KEY,
+Adres varchar(255),
+Woonplaats varchar(255)
+);
+
+CREATE TABLE 293n7.Teams
+(
+Teamnaam varchar(255) NOT NULL PRIMARY KEY,
+Omschrijving varchar(255)
+);
+
+CREATE TABLE 293n7.TeamLid
+(
+tl_ID int NOT NULL PRIMARY KEY auto_increment,
+Teamnaam varchar(255),
+lidnummer varchar(255),
+FOREIGN KEY (LidNummer) REFERENCES Lid(LidNummer),
+FOREIGN KEY (Teamnaam) REFERENCES Teams(Teamnaam)
+);
+
+CREATE TABLE 293n7.User
+(
+user_ID int NOT NULL PRIMARY KEY auto_increment,
+username varchar(255) unique,
+password varchar(255)
+);
+
+INSERT INTO 293n7.User (username,password)
+VALUES ('LOIDocent','mysqlphp');
+
+
+
+INSERT INTO 293n7.Teams (Teamnaam,Omschrijving)
+VALUES ('Fnatic','Eu fnatic');
+INSERT INTO 293n7.Teams (Teamnaam,Omschrijving)
+VALUES ('Vitality','Eu Vitality');
+INSERT INTO 293n7.Teams (Teamnaam,Omschrijving)
+VALUES ('Rogue','Eu Rogue');
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('001','Rekkles','Martin','1211GE','32');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0722345778','001');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Martin.Rekkles@Kcorp.com','001');
+
+Insert INTO 293n7.Postcode (Postcode, Adres, Woonplaats)
+VALUES ('1211GE','Laanweg', 'Hilversum');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Fnatic','001');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('002','Yellowstar','Bora','1211GE','32');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0736545778','002');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('YellowStar@Fnatic.com','002');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Fnatic','002');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('003','Febiven','Fabian','1211GE','32');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0752346648','003');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Febbie@fnatic.com','003');
+
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Fnatic','003');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('004','Wunder','Martin','1211GE','32');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0792368473','004');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Wunder@Fnatic.com','004');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Fnatic','004');
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('005','Alphari','Luca','1215PZ','150');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0612345778','005');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Alphari@vit.com','005');
+
+Insert INTO 293n7.Postcode (Postcode, Adres, Woonplaats)
+VALUES ('1215PZ','Wegisweg', 'Hilversum');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Vitality','005');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('006','Selfmade','Lucas','1215PZ','150');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0622345778','006');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Selfmade@vit.com','006');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Vitality','006');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('007','Perkz','Luca','1215PZ','150');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0632345778','007');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Perkz@vit.com','007');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Vitality','007');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('008','Carzzy','Carl','1215PZ','150');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0642345778','008');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Carrzy@vit.com','008');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Vitality','008');
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('009','Oddoamne','Jan','1221PZ','1');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0542345778','009');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('oddo@rogue.com','009');
+
+Insert INTO 293n7.Postcode (Postcode, Adres, Woonplaats)
+VALUES ('1221PZ','gondor', 'Hilversum');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Rogue','009');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('010','Malrang','Chan','1221PZ','1');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0532345778','010');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Malrang@rogue.com','010');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Rogue','010');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('011','Larssen','Luca','1221PZ','1');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0522345778','011');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Larssen@rogue.com','011');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Rogue','011');
+
+
+
+INSERT INTO 293n7.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('012','Trymbi','max','1221PZ','1');
+
+INSERT INTO 293n7.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0512345778','012');
+
+Insert INTO 293n7.Email (Email, Lidnummer)
+VALUES ('Trymbi@rogue.com','012');
+
+Insert INTO 293n7.TeamLid ( Teamnaam, lidnummer)
+VALUES ('Rogue','012');

@@ -1,0 +1,68 @@
+CREATE DATABASE 293n5;
+
+CREATE TABLE 293n5.Lid
+(
+LidNummer varchar(255) NOT NULL PRIMARY KEY,
+Naam varchar(255),
+Voornaam varchar(255),
+Postcode varchar(255),
+Huisnummer int,
+FOREIGN KEY (Postcode) REFERENCES Postcode(Postcode)
+);
+
+CREATE TABLE 293n5.Telefoonnummer
+(
+Telefoonnummer varchar(255) NOT NULL PRIMARY KEY,
+LidNummer varchar(255),
+FOREIGN KEY (LidNummer) REFERENCES Lid(LidNummer)
+);
+
+CREATE TABLE 293n5.Email
+(
+Email varchar(255) NOT NULL PRIMARY KEY,
+LidNummer varchar(255),
+FOREIGN KEY (LidNummer) REFERENCES Lid(LidNummer)
+);
+
+CREATE TABLE 293n5.Postcode
+(
+Postcode varchar(255) NOT NULL PRIMARY KEY,
+Adres varchar(255),
+Woonplaats varchar(255)
+);
+
+INSERT INTO 293n5.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('001','Rekkles','Martin','1211GE','32');
+
+INSERT INTO 293n5.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0612345678','001');
+
+Insert INTO 293n5.Email (Email, Lidnummer)
+VALUES ('Martin.Rekkles@Kcorp.com','001');
+
+Insert INTO 293n5.Postcode (Postcode, Adres, Woonplaats)
+VALUES ('1211GE','Laanweg', 'Hilversum');
+
+INSERT INTO 293n5.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('002','Wunder','Martin','1211GM','52');
+
+INSERT INTO 293n5.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0695784356','002');
+
+Insert INTO 293n5.Email (Email, Lidnummer)
+VALUES ('Martin.Wunder@Fnatic.com','002');
+
+Insert INTO 293n5.Postcode (Postcode, Adres, Woonplaats)
+VALUES ('1211GM','kometenstraat', 'Hilversum');
+
+INSERT INTO 293n5.Lid (LidNummer,Naam,Voornaam,Postcode,Huisnummer)
+VALUES ('003','Upset','Lucas','1215PZ','154');
+
+INSERT INTO 293n5.Telefoonnummer (Telefoonnummer,Lidnummer)
+VALUES ('0678345612','003');
+
+Insert INTO 293n5.Email (Email, Lidnummer)
+VALUES ('Lucas.Upset@Fnatic.com','003');
+
+Insert INTO 293n5.Postcode (Postcode, Adres, Woonplaats)
+VALUES ('1215PZ','straatweg', 'Hilversum');

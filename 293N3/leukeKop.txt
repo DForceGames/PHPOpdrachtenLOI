@@ -1,0 +1,6 @@
+Naam:Jan Jansen
+Adres:Dorpsstraat 8
+Postcode:1111AA
+Woonplaats:Leiderdorp
+Telnr:0612345678
+Email:jan@loi.nl
